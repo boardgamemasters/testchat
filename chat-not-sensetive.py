@@ -47,8 +47,8 @@ st.button("Clear message", on_click=on_btn_click)
 
 message(st.session_state.questions[0]) 
 
-with st.container():
-#with st.sidebar(): # Place the chatbot code inside the sidebar
+#with st.container():
+with st.sidebar(): # Place the chatbot code inside the sidebar
     selecthor = 0
     count =0
     # while 1==1:

@@ -8,30 +8,9 @@ from streamlit_carousel import carousel
 games = pd.Series(['lama', 'cow', 'lama', 'beetle', 'lama',
                'hippo'])
 
-# test_items = [
-#     dict(
-#         title="Slide 1",
-#         text="A tree in the savannah",
-#         interval=None,
-#         img="https://cf.geekdo-images.com/EVfMwPiHmxDUvY32BbghBg__imagepage/img/vFmU3UHOT8CT0ssjOw4OFmwR2jA=/fit-in/900x600/filters:no_upscale():strip_icc()/pic7378384.jpg",
-#     ),
-#     dict(
-#         title="Slide 2",
-#         text="A wooden bridge in a forest in Autumn",
-#         img="https://cf.geekdo-images.com/x3zxjr-Vw5iU4yDPg70Jgw__imagepage/img/-17KkOmxbTu2slJTabGrkO8ZW8s=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3490053.jpg",
-#     ),
-#     dict(
-#         title="Slide 3",
-#         text="A distant mountain chain preceded by a sea",
-#         img="https://img.freepik.com/free-photo/aerial-beautiful-shot-seashore-with-hills-background-sunset_181624-24143.jpg?w=1380&t=st=1688825798~exp=1688826398~hmac=f623f88d5ece83600dac7e6af29a0230d06619f7305745db387481a4bb5874a0",
-#     ),
-# ]
-
-# carousel(items=test_items, width=1)
-
-# def on_input_change():
-#     user_input = st.session_state.user_input
-#     st.session_state.responses.append(user_input)
+def on_input_change():
+    user_input = st.session_state.user_input
+    st.session_state.responses.append(user_input)
 
 
 

@@ -42,15 +42,15 @@ if 'responses' not in st.session_state.keys():
 
 
 
-chat_placeholder = st.empty()
-st.button("Clear message", on_click=on_btn_click)
+chat_placeholder = st.sidebar.empty()
+st.sidebar.button("Clear message", on_click=on_btn_click)
 
 message(st.session_state.questions[0]) 
 
 #with st.container():
-with st.sidebar(): # Place the chatbot code inside the sidebar
-    selecthor = 0
-    count =0
+#with st.sidebar(): # Place the chatbot code inside the sidebar
+selecthor = 0
+count =0
     # while 1==1:
     for response in (st.session_state.responses):
         count +=1

@@ -1,10 +1,6 @@
-import streamlit as st
-from time import sleep 
-import pandas as pd
-from streamlit_chat import message
-from streamlit_carousel import carousel
 
 import streamlit as st
+import pandas as pd
 from streamlit_chat import message
 
 games = pd.Series(['lama', 'cow', 'lama', 'beetle', 'lama', 'hippo'])
@@ -38,7 +34,11 @@ if 'responses' not in st.session_state.keys():
     st.session_state.questions.extend(questions_list)
     st.session_state.responses = []
 
-with st.sidebar(): # Place the chatbot code inside the sidebar
+chat_placeholder = st.empty()
+st.button("Clear message", on_click=on_btn_click)
+message(st.session_state.questions[0]) 
+
+with st.sidebar.container():  # Use st.sidebar.container instead of st.sidebar()
     selecthor = 0
     count = 0
     for response in (st.session_state.responses):
@@ -94,5 +94,3 @@ with col1:
 # Place the chat output (chatbot messages) in the second column
 with col2:
     chat_placeholder = st.empty()
-    st.button("Clear message", on_click=on_btn_click)
-    message(st.session_state.questions[0])

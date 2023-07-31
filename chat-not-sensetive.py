@@ -91,3 +91,4 @@ with col2:
     chat_placeholder = st.empty()
     st.button("Clear message", on_click=on_btn_click)
     message(st.session_state.questions[0])
+

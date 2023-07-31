@@ -47,6 +47,40 @@ st.button("Clear message", on_click=on_btn_click)
 
 message(st.session_state.questions[0]) 
 
+# Wrap the chatbot code with an HTML div element and apply CSS styles
+st.markdown("""
+<style>
+    .chatbot-box {
+        position: fixed; 
+        bottom: 10px; 
+        right: 10px; 
+        width: 375px; /* Samsung S22 mobile width */
+        height: 860px; /* Samsung S22 mobile height */
+        max-height: calc(100vh - 20px); /* Limit height to fit screen */
+        overflow-y: auto;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: #f0f0f0; /* Change background color as needed */
+        padding: 10px;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Place the chatbot code inside the div with the chatbot-box class
+with st.container():
+    st.text_input("User Response:", on_change=on_input_change, key="user_input")
+    
+    # Add the chatbot box here
+    st.markdown("""
+    <div class="chatbot-box">
+        <!-- Your chatbot code here -->
+        <div>
+            <h1>Chatbot:</h1>
+            <!-- ... (Your existing chatbot code) -->
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
 with st.container():
 #with st.sidebar(): # Place the chatbot code inside the sidebar
     selecthor = 0

@@ -84,13 +84,12 @@ with st.sidebar.container():  # Use st.sidebar.container instead of st.sidebar()
                     )
                     res_co += 1
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 # Place the chat input box in the first column
 with col1:
     st.text_input("User Response:", on_change=on_input_change, key="user_input")
 
-# Place the chat output (chatbot messages) in the second column
-with col2:
+# Place the chat output (chatbot messages) in the third column, row 3
+with col3:
     chat_placeholder = st.empty()
-

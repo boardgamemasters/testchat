@@ -1,8 +1,6 @@
 import streamlit as st
-from time import sleep 
 import pandas as pd
 from streamlit_chat import message
-from streamlit_carousel import carousel
 
 games = pd.Series(['lama', 'cow', 'lama', 'beetle', 'lama', 'hippo'])
 
@@ -43,6 +41,9 @@ message(st.session_state.questions[0])
 # Add custom CSS to position the chatbot in the bottom right corner and size it as Samsung S22 mobile
 st.markdown("""
 <style>
+    .main-container {
+        opacity: 0; /* Hide the main content */
+    }
     .chatbot-box {
         position: fixed; 
         bottom: 20px; 
@@ -110,4 +111,10 @@ with st.container():
                     What is your favorite Boardgame?''', key=f"b7{count}")
                     selecthor = 0
                     continue
+
+# Use the sidebar to hide the main content
+with st.sidebar():
+    st.markdown('<div class="main-container">', unsafe_allow_html=True)
+    st.write("This is the main content. Replace this with your Streamlit app's main code.")
     st.markdown('</div>', unsafe_allow_html=True)
+

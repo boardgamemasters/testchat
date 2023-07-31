@@ -23,7 +23,7 @@ st.markdown("""
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        align-items: flex-end;
+        align-items: flex-start;
         height: 100vh;
         width: 100vw;
         overflow: hidden;
@@ -39,7 +39,6 @@ st.markdown("""
         background-color: #f0f0f0; 
         padding: 10px;
         margin-bottom: 20px;
-    }
 </style>
 """, unsafe_allow_html=True)
 

@@ -148,6 +148,6 @@ with st.container():
 
 with st.container():
     st.text_input("User Response:", on_change=on_input_change, key="user_input")
-    st.markdown('</div>', unsafe_allow_html=True)
+    #st.markdown('</div>', unsafe_allow_html=True)
 
 

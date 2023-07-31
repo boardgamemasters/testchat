@@ -41,15 +41,9 @@ message(st.session_state.questions[0])
 # Add custom CSS to position the chatbot in the bottom right corner and size it as Samsung S22 mobile
 st.markdown("""
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-    }
     .stApp {
-        position: fixed;
-        bottom: 0;
-        right: 0;
         display: flex;
+        flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
         height: 100vh;

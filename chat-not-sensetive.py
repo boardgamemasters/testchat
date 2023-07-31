@@ -30,13 +30,13 @@ st.markdown("""
     }
 
     .stApp > div:first-child {
-        width: 375px; /* Samsung S22 mobile width */
-        height: 860px; /* Samsung S22 mobile height */
-        max-height: calc(100vh - 40px); /* Limit height to fit screen */
+        width: 375px; 
+        height: 860px; 
+        max-height: calc(100vh - 40px); 
         overflow-y: auto;
         border: 1px solid black;
         border-radius: 10px;
-        background-color: #f0f0f0; /* Change background color as needed */
+        background-color: #f0f0f0; 
         padding: 10px;
         margin-bottom: 20px;
     }

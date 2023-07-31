@@ -16,28 +16,6 @@ def on_btn_click():
 
 st.session_state.setdefault('questions', [])
 
-st.title("Survey QA Bot")
-questions_list = [
-    # 0
-    '''I would like to recommend you some Boardgames.
-    What is your favorite one?'''    
-    # 1
-    , '''I dont know this Game.
-    Please enter another one'''
-    # 2
-    , '''How many recommendations do you want to get?
-    'Please enter a Number between 1 and 5'''
-]
-
-if 'responses' not in st.session_state.keys():
-    st.session_state.questions.extend(questions_list)
-    st.session_state.responses = []
-
-chat_placeholder = st.empty()
-st.button("Clear message", on_click=on_btn_click)
-
-message(st.session_state.questions[0]) 
-
 # Add custom CSS to position the chatbot in the bottom right corner and size it as Samsung S22 mobile
 st.markdown("""
 <style>
@@ -64,6 +42,29 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
+st.title("Survey QA Bot")
+questions_list = [
+    # 0
+    '''I would like to recommend you some Boardgames.
+    What is your favorite one?'''    
+    # 1
+    , '''I dont know this Game.
+    Please enter another one'''
+    # 2
+    , '''How many recommendations do you want to get?
+    'Please enter a Number between 1 and 5'''
+]
+
+if 'responses' not in st.session_state.keys():
+    st.session_state.questions.extend(questions_list)
+    st.session_state.responses = []
+
+chat_placeholder = st.empty()
+st.button("Clear message", on_click=on_btn_click)
+
+message(st.session_state.questions[0]) 
+
 
 # Place the chatbot code inside the main container
 with st.container():

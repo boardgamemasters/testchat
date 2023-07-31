@@ -47,7 +47,7 @@ st.button("Clear message", on_click=on_btn_click)
 
 message(st.session_state.questions[0]) 
 
-# Add custom CSS to position the chatbot in the bottom right corner and size it as Samsung S22 mobile
+# Add custom CSS to position the chatbot in the bottom right corner and size it 
 st.markdown("""
 <style>
     .main-container {
@@ -60,9 +60,9 @@ st.markdown("""
     }
 
     .chatbot-box {
-        width: 375px; /* Samsung S22 mobile width */
-        height: 860px; /* Samsung S22 mobile height */
-        max-height: calc(100vh - 40px); /* Limit height to fit screen */
+        width: 375px; 
+        height: 860px; 
+        max-height: calc(100vh - 40px); 
         overflow-y: auto;
         border: 1px solid black;
         border-radius: 10px;

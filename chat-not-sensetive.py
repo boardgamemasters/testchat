@@ -11,6 +11,8 @@ games = pd.Series(['lama', 'cow', 'lama', 'beetle', 'lama',
 def on_input_change():
     user_input = st.session_state.user_input
     st.session_state.responses.append(user_input)
+    st.session_state.user_input = ""  # Clear the input after processing
+
 
 
 

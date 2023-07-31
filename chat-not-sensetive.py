@@ -15,6 +15,8 @@ def on_input_change():
 
 
 
+
+
 def on_btn_click():
     del st.session_state['questions']
     del st.session_state['responses']
@@ -38,23 +40,18 @@ questions_list = [
 if 'responses' not in st.session_state.keys():
     st.session_state.questions.extend(questions_list)
     st.session_state.responses = []
-  
-
-
 
 chat_placeholder = st.empty()
 st.button("Clear message", on_click=on_btn_click)
 
 message(st.session_state.questions[0]) 
 
-#with st.container():
-#with st.sidebar(): # Place the chatbot code inside the sidebar
-selecthor = 0
-count =0
+with st.container():
+    selecthor = 0
+    count =0
     # while 1==1:
     for response in (st.session_state.responses):
         count +=1
-        #response = response.lower()  # Convert user response to lowercase
         if selecthor == 0:
             message(response, is_user = True, key=f"a1{count}")
             if games.str.fullmatch(response, case = False).any():
@@ -111,4 +108,4 @@ count =0
 
 
 with st.container():
-    st.text_input("User Response:", on_change=on_input_change, key="user_input")
+    st.text_input("User Response:", on_change=on_input_change, key="user_input") 

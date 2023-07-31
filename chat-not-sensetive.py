@@ -47,11 +47,12 @@ st.button("Clear message", on_click=on_btn_click)
 
 message(st.session_state.questions[0]) 
 
-# Add custom CSS to position the chatbot in the bottom right corner and size it 
+# Add custom CSS to position the chatbot in the bottom right corner and size it as Samsung S22 mobile
 st.markdown("""
 <style>
-    .main-container {
+    .stApp {
         display: flex;
+        flex-direction: column-reverse;
         justify-content: flex-end;
         align-items: flex-end;
         height: 100vh;
@@ -59,10 +60,10 @@ st.markdown("""
         overflow: hidden;
     }
 
-    .chatbot-box {
-        width: 375px; 
-        height: 860px; 
-        max-height: calc(100vh - 40px); 
+    .stApp > div:first-child {
+        width: 375px; /* Samsung S22 mobile width */
+        height: 860px; /* Samsung S22 mobile height */
+        max-height: calc(100vh - 40px); /* Limit height to fit screen */
         overflow-y: auto;
         border: 1px solid black;
         border-radius: 10px;
@@ -73,10 +74,12 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Place the chatbot code inside the div with the chatbot-box class
 
+# Place the chatbot code inside the main container
 with st.container():
-#with st.sidebar(): # Place the chatbot code inside the sidebar
+    st.text_input("User Response:", on_change=on_input_change, key="user_input")
+    with st.sidebar:  # Place the chatbot code inside the sidebar
+        st.markdown('<div>', unsafe_allow_html=True)
     selecthor = 0
     count =0
     # while 1==1:

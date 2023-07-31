@@ -112,3 +112,5 @@ with st.sidebar(): # Place the chatbot code inside the sidebar
 
 with st.container():
     st.text_input("User Response:", on_change=on_input_change, key="user_input")
+
+

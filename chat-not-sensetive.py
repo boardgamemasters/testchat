@@ -42,8 +42,8 @@ if 'responses' not in st.session_state.keys():
 
 
 
-chat_placeholder = st.sidebar.empty()
-st.sidebar.button("Clear message", on_click=on_btn_click)
+chat_placeholder = st.empty()
+st.button("Clear message", on_click=on_btn_click)
 
 message(st.session_state.questions[0]) 
 

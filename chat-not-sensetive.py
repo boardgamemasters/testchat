@@ -5,15 +5,12 @@ from streamlit_chat import message
 from streamlit_carousel import carousel
 
 
-games = pd.Series(['lama', 'cow', 'lama', 'beetle', 'lama',
-               'hippo'])
+games = pd.Series(['lama', 'cow', 'lama', 'beetle', 'lama', 'hippo'])
 
 def on_input_change():
     user_input = st.session_state.user_input
     st.session_state.responses.append(user_input)
     st.session_state.user_input = ""  # Clear the input after processing
-
-
 
 def on_btn_click():
     del st.session_state['questions']
@@ -38,9 +35,6 @@ questions_list = [
 if 'responses' not in st.session_state.keys():
     st.session_state.questions.extend(questions_list)
     st.session_state.responses = []
-  
-
-
 
 chat_placeholder = st.empty()
 st.button("Clear message", on_click=on_btn_click)
@@ -61,33 +55,21 @@ st.markdown("""
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        height: 100vh;
-        width: 100vw;
-        overflow: hidden;
-    }
-
-    .stApp > div:first-child {
-        width: 375px; /* Samsung S22 mobile width */
-        height: 860px; /* Samsung S22 mobile height */
-        max-height: calc(100vh - 40px); /* Limit height to fit screen */
-        overflow-y: auto;
-        border: 1px solid black;
-        border-radius: 10px;
-        background-color: #f0f0f0; /* Change background color as needed */
+        height: 860px;
+        width: 375px;
         padding: 10px;
         margin-bottom: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: #f0f0f0;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# Place the chatbot code inside the main container
-with st.container():
-    st.text_input("User Response:", on_change=on_input_change, key="user_input")
-    with st.sidebar:  # Place the chatbot code inside the sidebar
-        st.markdown('<div>', unsafe_allow_html=True)
+# Place the chatbot code inside the sidebar
+with st.sidebar:
     selecthor = 0
     count =0
-    # while 1==1:
     for response in (st.session_state.responses):
         count +=1
         #response = response.lower()  # Convert user response to lowercase
@@ -136,17 +118,7 @@ with st.container():
                 What is your favorite Boardgame?''', key=f"b7{count}")
                 selecthor = 0
                 continue
-                
-                     
-                   
-    
-    # for response, question in zip(st.session_state.responses, st.session_state.questions[1:]):
-    #     message(response, )
-    #     message(response)
-    #     message(question)
 
-st.markdown('</div>', unsafe_allow_html=True)
-#with st.container():
-    #st.text_input("User Response:", on_change=on_input_change, key="user_input")
-    #st.markdown('</div>', unsafe_allow_html=True)
-
+# Place the chat input box inside the main container
+with st.container():
+    st.text_input("User Response:", on_change=on_input_change, key="user_input")

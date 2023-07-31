@@ -55,10 +55,13 @@ with st.container():
         if selecthor == 0:
             message(response, is_user = True, key=f"a1{count}")
             if games.str.fullmatch(response, case = False).any():
+              if ((games.str.fullmatch(response, case = False)).sum())!=1:
                 sel_game = games.loc[games.str.fullmatch(response, case = False)][0]
-                selecthor = 1
-                message(st.session_state.questions[2], key=f"b2{count}")  
-                continue
+              else:
+                sel_game = games.loc[games.str.fullmatch(response, case = False)]
+              selecthor = 1
+              message(st.session_state.questions[2], key=f"b2{count}")  
+              continue
             else:
                 message(st.session_state.questions[1], key=f"b1{count}")
         if selecthor == 1:

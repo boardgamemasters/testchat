@@ -35,6 +35,11 @@ questions_list = [
 if 'responses' not in st.session_state.keys():
     st.session_state.questions.extend(questions_list)
     st.session_state.responses = []
+    
+chat_placeholder = st.empty()
+st.button("Clear message", on_click=on_btn_click)
+
+message(st.session_state.questions[0]) 
 
 with st.sidebar(): # Place the chatbot code inside the sidebar
     selecthor = 0
@@ -69,20 +74,19 @@ with st.sidebar(): # Place the chatbot code inside the sidebar
         if selecthor == 2:
             selecthor = 3
             continue
-        if selecthor == 3:
-            message(response, is_user=True, key=f"a3{count}")  
+       if selecthor== 3:
+            message(response, is_user = True, key=f"a3{count}")  
             if (pd.Series(['y', 'Y', 'yes', 'Yes'])).isin([response]).any():
                 message('I can recommend you the following games:', key=f"b5{count}")
-                amey_games = pd.DataFrame({'bgg_id': af.game_of_my_life(user_favorite_game=sel_game, data=amey_df, z=alt)})
-                amey_games = ursula.get_feature(result_file=amey_games, feature_file=games_info)
-                res_co = 0
-                for i in range(len(amey_games)):
-                    message(
-                        f'<img width="100%" height="200" src="{amey_games.iloc[res_co]["image"]}"/>',
-                        key=f"img_{count}_{res_co}",
-                        allow_html=True
-                    )
-                    res_co += 1
+            elif (pd.Series(['n', 'N', 'no', 'No'])).isin([response]).any():
+                message('Lets try again', key=f"b6{count}")
+                selecthor = 0
+                continue
+            else:
+                message(f'''{response} is not a valid input. Please try again
+                What is your favorite Boardgame?''', key=f"b7{count}")
+                selecthor = 0
+                continue
 
 col1, col2 = st.beta_columns(2)
 

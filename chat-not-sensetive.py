@@ -52,7 +52,7 @@ st.markdown("""
 <style>
     .stApp {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
         height: 100vh;

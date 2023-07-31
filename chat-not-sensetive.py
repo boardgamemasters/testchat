@@ -24,8 +24,8 @@ st.markdown("""
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-start;
-        height: 100vh;
-        width: 100vw;
+        height: 80vh;
+        width: 80vw;
         overflow: hidden;
     }
 

@@ -4,6 +4,7 @@ import pandas as pd
 from streamlit_chat import message
 from streamlit_carousel import carousel
 
+
 games = pd.Series(['lama', 'cow', 'lama', 'beetle', 'lama', 'hippo'])
 
 def on_input_change():

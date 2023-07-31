@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 from streamlit_chat import message
@@ -85,7 +84,7 @@ with st.sidebar.container():  # Use st.sidebar.container instead of st.sidebar()
                     )
                     res_co += 1
 
-col1, col2 = st.beta_columns(2)
+col1, col2 = st.columns(2)
 
 # Place the chat input box in the first column
 with col1:
@@ -94,3 +93,4 @@ with col1:
 # Place the chat output (chatbot messages) in the second column
 with col2:
     chat_placeholder = st.empty()
+
